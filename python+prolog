@@ -1,0 +1,27 @@
+from pyswip import Prolog
+
+prolog = Prolog()
+prolog.consult('main.pl')  # Путь к файлу с вашей базой знаний Prolog
+
+def recommend_heroes(preferred_property):
+    return list(prolog.query(f"property(X, {preferred_property})"))
+
+def recommend_items(gold_available):
+    return list(prolog.query(f"affordable_item(X, {gold_available})"))
+
+def parse_input(user_input):
+    user_preferences = user_input.split(', ')
+    preferred_property = user_preferences[1].split(': ')[1]
+    gold_available = int(user_preferences[2].split(': ')[1])
+    return preferred_property, gold_available
+
+def give_recommendations(user_input):
+    preferred_property, gold_available = parse_input(user_input)
+    recommended_heroes = recommend_heroes(preferred_property)
+    recommended_items = recommend_items(gold_available)
+    return recommended_heroes, recommended_items
+
+# Пример использования
+user_input = 'Мне 13 лет, предпочитаемое свойство: intelligence, доступное золото: 5000'
+recommendations = give_recommendations(user_input)
+print(recommendations)
