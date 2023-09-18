@@ -1,3 +1,4 @@
+
 % Факты с одним аргументом
 
 hero(dragon_knight).
@@ -21,13 +22,12 @@ hero(lich).
 hero(ogre_magi).
 hero(luna).
 
-item(clarity).
-item(tango).
-item(basher).
+item(clarity). 
+item(tango). 
+item(basher). 
 item(eul).
 item(rapier).
 item(tarasque).
-
 
 % Факты с двумя аргументами
 sister(dragon_knight,mirana).
@@ -47,14 +47,14 @@ ability(invoker,invoke).
 ability(juggernaut,blade_fury).
 ability(juggernaut,omnislash).
 
-property(lich,intelegent).
-property(invoker,intelegent).
+property(lich,intelligent).
+property(invoker,intelligent).
 property(luna,agility).
 property(pudge,strength).
-
-cost(tango,100).
-cost(clarity,150).
-cost(basher,1000).
+ 
+cost(tango,100). 
+cost(clarity,150). 
+cost(basher,1000). 
 cost(eul,2000).
 cost(rapier,6000).
 cost(tarasque,6500).
@@ -63,23 +63,8 @@ cost(tarasque,6500).
 % Правила
 can_use_ability(A, B) :- hero(A), ability(A, B).
 
-property_hero(A,B):- hero(A), property(A,B).
-
 affordable_item(Item, Gold) :- item(Item), cost(Item, Cost), Gold >= Cost.
 
 normal_item(Item) :- item(Item), cost(Item, Cost), Cost < 2000.
 
-cheep_item(Item) :- item(Item), cost(Item, Cost), Cost < 200.
-
-
-
-
-
-
-
-
-
-
-
-
-
+cheap_item(Item) :- item(Item), cost(Item, Cost), Cost < 200.
