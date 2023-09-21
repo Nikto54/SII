@@ -1,7 +1,7 @@
 from pyswip import Prolog
 
 prolog = Prolog()
-prolog.consult('main.pl')  # Путь к файлу с вашей базой знаний Prolog
+prolog.consult('main.pl')
 
 def recommend_heroes(preferred_property):
     return list(prolog.query(f"property(X, {preferred_property})"))
@@ -22,6 +22,6 @@ def give_recommendations(user_input):
     return recommended_heroes, recommended_items
 
 # Пример использования
-user_input = 'Мне 13 лет, предпочитаемое свойство: intelligence, доступное золото: 5000'
+user_input = 'Мне 13 лет, предпочитаемое свойство: intelligent, доступное золото: 100'
 recommendations = give_recommendations(user_input)
 print(recommendations)
