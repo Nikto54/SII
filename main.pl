@@ -22,9 +22,9 @@ hero(lich).
 hero(ogre_magi).
 hero(luna).
 
-item(clarity). 
-item(tango). 
-item(basher). 
+item(clarity).
+item(tango).
+item(basher).
 item(eul).
 item(rapier).
 item(tarasque).
@@ -51,10 +51,10 @@ property(lich,intelligent).
 property(invoker,intelligent).
 property(luna,agility).
 property(pudge,strength).
- 
-cost(tango,100). 
-cost(clarity,150). 
-cost(basher,1000). 
+
+cost(tango,100).
+cost(clarity,150).
+cost(basher,1000).
 cost(eul,2000).
 cost(rapier,6000).
 cost(tarasque,6500).
